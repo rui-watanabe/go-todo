@@ -10,7 +10,7 @@
   <h1>TODO</h1>
   <ul>
     {{range .todo}}
-    <li>{{.}}</li>
+    <li>{{.CreatedAt}}, {{.CreatedBy}}, {{.Content}}, {{.Status}}</li>
     {{end}}
   </ul>
 </body>
