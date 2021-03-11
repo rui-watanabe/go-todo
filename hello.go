@@ -8,10 +8,10 @@ import (
 )
 
 type Todo struct {
-	CreatedAt time.Time
-	CreatedBy string
-	Content   string
-	Status    int
+	CreatedAtString string
+	CreatedBy       string
+	Content         string
+	Status          int
 }
 
 func main() {
@@ -26,22 +26,22 @@ func main() {
 	// todo = append(todo, t)
 	todo := []Todo{
 		Todo{
-			CreatedAt: time.Now(),
-			CreatedBy: "max",
-			Content:   "hello",
-			Status:    0,
+			CreatedAtString: time.Now().Format("2006-03-11 21:45:05"),
+			CreatedBy:       "max",
+			Content:         "Frontend",
+			Status:          1,
 		},
 		Todo{
-			CreatedAt: time.Now(),
-			CreatedBy: "leo",
-			Content:   "hi",
-			Status:    0,
+			CreatedAtString: time.Now().Format("2006-03-11 21:45:05"),
+			CreatedBy:       "leo",
+			Content:         "Backend",
+			Status:          0,
 		},
 		Todo{
-			CreatedAt: time.Now(),
-			CreatedBy: "gin",
-			Content:   "good morning",
-			Status:    0,
+			CreatedAtString: time.Now().Format("2006-03-11 21:45:05"),
+			CreatedBy:       "gin",
+			Content:         "Infra",
+			Status:          0,
 		},
 	}
 
