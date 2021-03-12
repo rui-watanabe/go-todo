@@ -8,14 +8,26 @@
 </head>
 <body>
   <h1>TODO</h1>
+  <form action="/todo">
+    Todo:<input type="text" name="content">
+    Name:<input type="text" name="name">
+    <input type="submit">
+  </form>
   <ul>
     {{range .todo}}
-    <li>{{.CreatedAtString}} {{.CreatedBy}} {{.Content}}
-      {{if eq .Status 0}}
-      not done
-      {{else}}
-      done
-      {{end}}
+    <li>
+      <form action="/done">
+        <input type="hidden" name="id" value="{{.Id}}">
+        <input type="hidden" name="status" value="{{.Status}}">
+        {{.CreatedAtString}} {{.CreatedBy}} {{.Content}}
+        {{if eq .Status 0}}
+        not done
+        <input type="submit" value="Done">
+        {{else}}
+        <input type="submit" value="Reset">
+        done
+        {{end}}
+      </form>
     </li>
     {{end}}
   </ul>
